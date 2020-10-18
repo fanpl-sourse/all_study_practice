@@ -8,6 +8,7 @@ import pytest
 
 
 class TestOrder():
+    @pytest.mark.run(order=-1)
     def test_case1(self):
         print('test_case1')
 
