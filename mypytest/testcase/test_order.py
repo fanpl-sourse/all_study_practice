@@ -20,5 +20,5 @@ class TestOrder():
         print('test_case3')
 
     @pytest.mark.run(order=1)
-    def test_case4(self):
+    def test_case4(self,fixture_sendpara):
         print('test_case4')
