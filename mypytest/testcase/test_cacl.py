@@ -10,16 +10,18 @@ import sys
 import pytest
 import yaml
 from mypytest.cacl.cacl import Cacl
+from mypytest.util.readyaml import Util
+
 
 class TestCacl():
     def setup(self):
-        self.cacl = Cacl()
         print('setup')
 
     @classmethod
-    def setup_class(cls):
-        cls.cacl = Cacl()
+    def setup_class(self):
+        self.cacl = Cacl()
         print('setupclass')
+
     @classmethod
     def teardown_class(cls):
         print('teardownclass')
@@ -36,6 +38,20 @@ class TestCacl():
         assert c == self.cacl.myadd(a,b)
 
     @pytest.mark.mysub
-    @pytest.mark.parametrize(('a,b,c'),yaml.safe_load(open('../data/cacl_data.yaml')))
+    # @pytest.mark.parametrize(('a,b,c'),yaml.safe_load(open('../data/cacl_data.yaml')))
+    @pytest.mark.parametrize(('a,b,c'),Util().readyaml('../data/cacl_data.yaml'))
     def test_mysub(self,a,b,c):
         assert c == self.cacl.mysub(a,b)
+
+    @pytest.mark.mymut
+    @pytest.mark.parametrize(('a,b,c'),Util().readyaml('../data/cacl_md_data.yaml')['mut'],ids=['int','minus','float','zero'])
+    def test_mymut(self,a,b,c):
+        assert c == self.cacl.mymut(a,b)
+
+    @pytest.mark.mydiv
+    @pytest.mark.parametrize(('a,b,c'),Util().readyaml('../data/cacl_md_data.yaml')['div'],ids=['int','minus','float','zero'])
+    def test_mydiv(self,a,b,c):
+        try:
+            assert c == self.cacl.mydiv(a,b)
+        except ZeroDivisionError as es:
+            print('除数为0')
