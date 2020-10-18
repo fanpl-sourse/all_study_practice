@@ -22,3 +22,6 @@ class TestOrder():
     @pytest.mark.run(order=1)
     def test_case4(self,fixture_sendpara):
         print('test_case4')
+
+    def test_aaa(self):
+        print('这个执行顺序是？？')
