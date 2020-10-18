@@ -12,6 +12,17 @@ import yaml
 from mypytest.cacl.cacl import Cacl
 from mypytest.util.readyaml import Util
 
+datas = Util().readyaml('../data/cacl_md_data.yaml')
+for key in datas:
+    if key == 'mut':
+        mymut = datas['mut']
+        mymutkeys = mymut.keys()
+        mymutvalues = mymut.values()
+    elif key == 'div':
+        mydiv = datas['div']
+        mydivkeys = mydiv.keys()
+        mydivvalues = mydiv.values()
+
 
 class TestCacl():
     def setup(self):
@@ -43,13 +54,14 @@ class TestCacl():
     def test_mysub(self,a,b,c):
         assert c == self.cacl.mysub(a,b)
 
+
     @pytest.mark.mymut
-    @pytest.mark.parametrize(('a,b,c'),Util().readyaml('../data/cacl_md_data.yaml')['mut'],ids=['int','minus','float','zero'])
-    def test_mymut(self,a,b,c):
+    @pytest.mark.parametrize(('a,b,c'),mymutvalues,ids=mymutkeys)
+    def test_mymut2(self,a,b,c):
         assert c == self.cacl.mymut(a,b)
 
-    @pytest.mark.mydiv
-    @pytest.mark.parametrize(('a,b,c'),Util().readyaml('../data/cacl_md_data.yaml')['div'],ids=['int','minus','float','zero'])
+
+    @pytest.mark.parametrize(('a,b,c'),mydivvalues,ids=mydivkeys)
     def test_mydiv(self,a,b,c):
         try:
             assert c == self.cacl.mydiv(a,b)
