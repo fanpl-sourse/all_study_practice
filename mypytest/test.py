@@ -5,3 +5,5 @@
 # @Software: PyCharm
 # @desc    :
 print('hi')
+
+print('@'*30+[])
