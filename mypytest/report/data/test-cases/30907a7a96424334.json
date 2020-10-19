@@ -1,0 +1,109 @@
+{
+  "uid" : "30907a7a96424334",
+  "name" : "test_myadd1[minus]",
+  "fullName" : "testcase.test_fixture.TestParacases1#test_myadd1",
+  "historyId" : "32a581d505dcc6589fd2b27d8508aca0",
+  "time" : {
+    "start" : 1603086315929,
+    "stop" : 1603086315929,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "begin",
+    "time" : {
+      "start" : 1603086315928,
+      "stop" : 1603086315928,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "207f4f0795d657d",
+      "name" : "stdout",
+      "source" : "207f4f0795d657d.txt",
+      "type" : "text/plain",
+      "size" : 112
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "begin::0",
+    "time" : {
+      "start" : 1603086315930,
+      "stop" : 1603086315931,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testcase"
+  }, {
+    "name" : "suite",
+    "value" : "test_fixture"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestParacases1"
+  }, {
+    "name" : "host",
+    "value" : "Yiron.local"
+  }, {
+    "name" : "thread",
+    "value" : "86675-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "a",
+    "value" : "-2"
+  }, {
+    "name" : "b",
+    "value" : "-4"
+  }, {
+    "name" : "c",
+    "value" : "-6"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "30907a7a96424334.json",
+  "parameterValues" : [ "-2", "-4", "-6" ]
+}

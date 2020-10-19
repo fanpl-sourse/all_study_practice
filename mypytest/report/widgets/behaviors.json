@@ -1,4 +1,15 @@
 {
-  "total" : 62,
-  "items" : [ ]
+  "total" : 63,
+  "items" : [ {
+    "uid" : "93d67b63e9075d26bf68fe037f06d8a1",
+    "name" : "测试功能模块",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 5,
+      "unknown" : 0,
+      "total" : 5
+    }
+  } ]
 }

@@ -1,0 +1,1 @@
+{"uuid": "bdf2d264-aebb-4827-865e-ec5fb971a608", "children": ["2a6f546a-5c93-4e4e-8bd8-4ea1fe64cfdd"], "befores": [{"name": "fixture_sendpara", "status": "passed", "start": 1603088064165, "stop": 1603088064165}], "afters": [{"name": "fixture_sendpara::0", "status": "passed", "start": 1603088064166, "stop": 1603088064166}], "start": 1603088064165, "stop": 1603088064166}

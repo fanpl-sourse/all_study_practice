@@ -7,13 +7,13 @@
       "name" : "pytest_assume.plugin.FailedAssumption: \n2 Failed Assumptions:\n\ntest_assume.py:12: AssumptionFailure\n>>\tpytest.assume(1==4)\nAssertionError: assert False\n\ntest_assume.py:14: AssumptionFailure\n>>\tpytest.assume(3==0)\nAssertionError: assert False",
       "children" : [ {
         "name" : "testcase",
-        "uid" : "3a5a811a81a89368",
+        "uid" : "6cf8280202e88d41",
         "parentUid" : "75d531253d9385900edaf38362561829",
         "status" : "failed",
         "time" : {
-          "start" : 1603086315737,
-          "stop" : 1603086315777,
-          "duration" : 40
+          "start" : 1603088064204,
+          "stop" : 1603088064246,
+          "duration" : 42
         },
         "flaky" : false,
         "newFailed" : false,
@@ -24,12 +24,12 @@
       "name" : "AssertionError: assert False",
       "children" : [ {
         "name" : "test_b",
-        "uid" : "6a69fc97d34e13f0",
+        "uid" : "82dd4531ff081bf3",
         "parentUid" : "8d89788b03808d3beec6ddf8e7d75f3d",
         "status" : "failed",
         "time" : {
-          "start" : 1603086315902,
-          "stop" : 1603086315902,
+          "start" : 1603088064369,
+          "stop" : 1603088064369,
           "duration" : 0
         },
         "flaky" : false,
@@ -41,12 +41,12 @@
       "name" : "AssertionError: assert 3.1 == (1 + 2)",
       "children" : [ {
         "name" : "test_myadd[int]",
-        "uid" : "472f5752758ec8bf",
+        "uid" : "d79327fd529b3a0c",
         "parentUid" : "3fca93a41e82735f7fff62e5aad63d47",
         "status" : "failed",
         "time" : {
-          "start" : 1603086316002,
-          "stop" : 1603086316003,
+          "start" : 1603088064462,
+          "stop" : 1603088064463,
           "duration" : 1
         },
         "flaky" : false,

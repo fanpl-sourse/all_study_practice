@@ -1,0 +1,7 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%begin的开始 autouse
+setup 在类2方法前调用
+这是要测试的方法4
+teardown 在类2方法后调用
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%begin的结束 
+teardown_class 在类2后调用
+teardown_module 在模块后调用
