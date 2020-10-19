@@ -1,0 +1,3 @@
+method1 setup
+assertEqual
+method1 tearDown

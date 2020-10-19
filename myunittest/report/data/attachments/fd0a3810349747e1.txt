@@ -1,0 +1,3 @@
+method1 setup
+isupper1
+method1 tearDown

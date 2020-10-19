@@ -1,0 +1,111 @@
+[ {
+  "uid" : "74fc661209fd4dc7",
+  "name" : "test_isupper",
+  "time" : {
+    "start" : 1603087533950,
+    "stop" : 1603087533950,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6db9693f45ae22c9",
+  "name" : "test_upper",
+  "time" : {
+    "start" : 1603087533952,
+    "stop" : 1603087533953,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "305271b8c199d115",
+  "name" : "test_isupper1",
+  "time" : {
+    "start" : 1603087533970,
+    "stop" : 1603087533970,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5430a6061ede3c17",
+  "name" : "test_assertNotEqual",
+  "time" : {
+    "start" : 1603087533965,
+    "stop" : 1603087533966,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8c5ec07954372249",
+  "name" : "test_assertFault",
+  "time" : {
+    "start" : 1603087533963,
+    "stop" : 1603087533963,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "37a61033471439e6",
+  "name" : "test_assertEqual",
+  "time" : {
+    "start" : 1603087533961,
+    "stop" : 1603087533961,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "54a731f35caeaee8",
+  "name" : "test_upper1",
+  "time" : {
+    "start" : 1603087533974,
+    "stop" : 1603087533975,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9778673149c12585",
+  "name" : "test_assertTrue",
+  "time" : {
+    "start" : 1603087533967,
+    "stop" : 1603087533968,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "48f59d85827b2f3a",
+  "name" : "test_upper",
+  "time" : {
+    "start" : 1603087533958,
+    "stop" : 1603087533958,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "aa3d8839133c0f90",
+  "name" : "test_split1",
+  "time" : {
+    "start" : 1603087533972,
+    "stop" : 1603087533972,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "aceab58f4c100b69",
+  "name" : "test_isupper",
+  "time" : {
+    "start" : 1603087533955,
+    "stop" : 1603087533956,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

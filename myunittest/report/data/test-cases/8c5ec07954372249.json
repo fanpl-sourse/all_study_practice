@@ -1,0 +1,99 @@
+{
+  "uid" : "8c5ec07954372249",
+  "name" : "test_assertFault",
+  "fullName" : "test_unittest.TestMethods1#test_assertFault",
+  "historyId" : "21b5f9d999996067280b0fee22a2342b",
+  "time" : {
+    "start" : 1603087533963,
+    "stop" : 1603087533963,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_UnitTestCase__pytest_class_setup",
+    "time" : {
+      "start" : 1603087533960,
+      "stop" : 1603087533960,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "f8850171cc1ac992",
+      "name" : "stdout",
+      "source" : "f8850171cc1ac992.txt",
+      "type" : "text/plain",
+      "size" : 43
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "_UnitTestCase__pytest_class_setup::0",
+    "time" : {
+      "start" : 1603087533977,
+      "stop" : 1603087533977,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "test_unittest"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMethods1"
+  }, {
+    "name" : "host",
+    "value" : "Yiron.local"
+  }, {
+    "name" : "thread",
+    "value" : "87736-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_unittest"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8c5ec07954372249.json",
+  "parameterValues" : [ ]
+}

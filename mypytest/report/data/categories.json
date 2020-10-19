@@ -1,0 +1,60 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "pytest_assume.plugin.FailedAssumption: \n2 Failed Assumptions:\n\ntest_assume.py:12: AssumptionFailure\n>>\tpytest.assume(1==4)\nAssertionError: assert False\n\ntest_assume.py:14: AssumptionFailure\n>>\tpytest.assume(3==0)\nAssertionError: assert False",
+      "children" : [ {
+        "name" : "testcase",
+        "uid" : "3a5a811a81a89368",
+        "parentUid" : "75d531253d9385900edaf38362561829",
+        "status" : "failed",
+        "time" : {
+          "start" : 1603086315737,
+          "stop" : 1603086315777,
+          "duration" : 40
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "75d531253d9385900edaf38362561829"
+    }, {
+      "name" : "AssertionError: assert False",
+      "children" : [ {
+        "name" : "test_b",
+        "uid" : "6a69fc97d34e13f0",
+        "parentUid" : "8d89788b03808d3beec6ddf8e7d75f3d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1603086315902,
+          "stop" : 1603086315902,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8d89788b03808d3beec6ddf8e7d75f3d"
+    }, {
+      "name" : "AssertionError: assert 3.1 == (1 + 2)",
+      "children" : [ {
+        "name" : "test_myadd[int]",
+        "uid" : "472f5752758ec8bf",
+        "parentUid" : "3fca93a41e82735f7fff62e5aad63d47",
+        "status" : "failed",
+        "time" : {
+          "start" : 1603086316002,
+          "stop" : 1603086316003,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "1", "2", "3.1" ]
+      } ],
+      "uid" : "3fca93a41e82735f7fff62e5aad63d47"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

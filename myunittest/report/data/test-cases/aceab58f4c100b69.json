@@ -1,0 +1,69 @@
+{
+  "uid" : "aceab58f4c100b69",
+  "name" : "test_isupper",
+  "fullName" : "test_unittest.TestMethods#test_isupper",
+  "historyId" : "86cf6a689b3510b685a05a0646b4cbe4",
+  "time" : {
+    "start" : 1603087533955,
+    "stop" : 1603087533956,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "4929a9aa8498731",
+      "name" : "stdout",
+      "source" : "4929a9aa8498731.txt",
+      "type" : "text/plain",
+      "size" : 8
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "test_unittest"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMethods"
+  }, {
+    "name" : "host",
+    "value" : "Yiron.local"
+  }, {
+    "name" : "thread",
+    "value" : "87736-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_unittest"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "aceab58f4c100b69.json",
+  "parameterValues" : [ ]
+}

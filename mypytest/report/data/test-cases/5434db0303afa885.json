@@ -1,0 +1,141 @@
+{
+  "uid" : "5434db0303afa885",
+  "name" : "test_mydiv[minus]",
+  "fullName" : "testcase.test_cacl.TestCacl#test_mydiv",
+  "historyId" : "2a811858e22a76a2aa00a429302ef39e",
+  "time" : {
+    "start" : 1603086315874,
+    "stop" : 1603086315874,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "begin",
+    "time" : {
+      "start" : 1603086315873,
+      "stop" : 1603086315873,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_Class__pytest_setup_class",
+    "time" : {
+      "start" : 1603086315798,
+      "stop" : 1603086315798,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5b79ff63313e3fdd",
+      "name" : "stdout",
+      "source" : "5b79ff63313e3fdd.txt",
+      "type" : "text/plain",
+      "size" : 105
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "begin::0",
+    "time" : {
+      "start" : 1603086315876,
+      "stop" : 1603086315876,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_Class__pytest_setup_class::0",
+    "time" : {
+      "start" : 1603086315890,
+      "stop" : 1603086315890,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testcase"
+  }, {
+    "name" : "suite",
+    "value" : "test_cacl"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCacl"
+  }, {
+    "name" : "host",
+    "value" : "Yiron.local"
+  }, {
+    "name" : "thread",
+    "value" : "86675-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_cacl"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "a",
+    "value" : "-100"
+  }, {
+    "name" : "b",
+    "value" : "-5"
+  }, {
+    "name" : "c",
+    "value" : "20"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "5434db0303afa885.json",
+  "parameterValues" : [ "-100", "-5", "20" ]
+}
