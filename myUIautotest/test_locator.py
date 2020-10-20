@@ -11,13 +11,13 @@ from selenium.webdriver.common.by import By
 
 
 class TestLocator():
-    def setup_class(self):
+    def setup(self):
         self.driver = webdriver.Chrome()
         self.driver.get('https://www.baidu.com/')
         self.driver.maximize_window()
         self.driver.implicitly_wait(3)
 
-    def teardown_class(self):
+    def teardown(self):
         self.driver.quit()
 
     def test_Id(self):
