@@ -12,6 +12,7 @@
 1. 在已有的Chrome上打开调试 (可执行文件名 chrome.exe)
 2. 修改selenium代码，让她适应这种调试
 """
+import shelve
 from time import sleep
 
 from selenium import webdriver
@@ -19,15 +20,25 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 
+
+
 class TestRemote():
     def setup(self):
+
+        # 和浏览器打开的调试端口进行通信
+        # 浏览器要使用 --remote-debugging-port=9222 开启调试，
+        # 由于我环境变量设置了变量，alias driver_debugging='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222'
+        # 所以可以直接：driver_debugging
         option = Options()
         option.debugger_address = '127.0.0.1:9222'
         self.driver = webdriver.Chrome(options=option)
+
     def teardown(self):
-        # self.driver.quit()
-        pass
+        self.driver.quit()
 
     def test_remote_debug(self):
         self.driver.find_element(By.ID,'menu_contacts').click()
         sleep(2)
+
+
+
