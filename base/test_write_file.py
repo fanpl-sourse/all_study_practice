@@ -7,7 +7,7 @@
 
 import os
 
-FILE_PATH = "/Users/a/Documents/2020study/all_study_practice/demo.txt"
+FILE_PATH = "/Users/a/Documents/2020study/all_study_practice/base/demo.txt"
 
 if os.path.exists(FILE_PATH):
     with open(FILE_PATH, encoding="utf-8", mode="w+") as FILE_HANDLER:
