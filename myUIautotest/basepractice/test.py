@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2020/10/19 15:31
 # @Author  : 饭盆里
-# @File    : test.py
+# @File    : test_thefirstscript.py
 # @Software: PyCharm
 # @desc    : 验证一下环境
 
