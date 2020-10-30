@@ -32,7 +32,7 @@ class TestTouchAction:
     def test_touch_action(self):
         """
         1.打开雪球APP
-        2. 在首页滑动
+        2. 在首页滑动(下拉划框)
         :return:
         """
         sleep(3)
