@@ -13,6 +13,8 @@
 4. 参数化
    参数化运行的时候希望不重启APP，需要在案例运行结束后进入通讯录页面
 """
+from time import sleep
+
 import pytest
 import yaml
 from appium import webdriver
@@ -94,5 +96,52 @@ class TestQywxContact:
         assert '添加成功' in toast_message
         #返回到列表页
         self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/h9e').click()
+
+
+    def test_del_contact(self):
+        """
+        1. 打开应用
+        2. 点击通讯录
+        3. 找到要删除的联系人
+        4. 进入联系人页面
+        5. 点击右上角的三个点进入个人信息页面，点击编辑成员
+        6. 删除联系人
+        7. 确认删除
+        8. 验证删除成功
+        :return:
+        """
+        name = 'fanfan11'
+        # 点击通讯录
+        self.driver.find_element(MobileBy.XPATH, '//*[@text="通讯录"]').click()
+
+        # 找到要删除的联系人
+        self.driver.find_element(MobileBy.ID,'com.tencent.wework:id/h9z').click()
+        self.driver.find_element(MobileBy.ID,'com.tencent.wework:id/fxc').send_keys(name)
+        sleep(2)
+        search_element_list = self.driver.find_elements(MobileBy.XPATH,f'//*[@text="{name}"]')
+        if len(search_element_list) <= 1:
+            print('没有找到要删除的数据')
+            return
+        search_element_list[-1].click()
+
+        print(len(search_element_list))
+
+        # 点击右上角的三个点进入个人信息页面，点击编辑成员
+        self.driver.find_element(MobileBy.ID,'com.tencent.wework:id/h9p').click()
+        self.driver.find_element(MobileBy.XPATH,'//*[@text="编辑成员"]').click()
+
+        # 滚动查找到【删除成员】按钮，点击
+        self.driver.find_element_by_android_uiautomator('new UiScrollable(new UiSelector().scrollable(true).instance(0))'
+                                                        '.scrollIntoView(new UiSelector().text("删除成员").instance(0));').click()
+
+        # 确认删除
+        self.driver.find_element(MobileBy.ID,'com.tencent.wework:id/bci').click()
+
+        # 验证删除成功
+        sleep(2)
+        search_element_list_after = self.driver.find_elements(MobileBy.XPATH, f'//*[@text="{name}"]')
+        sleep(2)
+        print(len(search_element_list_after))
+        assert len(search_element_list) - len(search_element_list_after) == 1
 
 
