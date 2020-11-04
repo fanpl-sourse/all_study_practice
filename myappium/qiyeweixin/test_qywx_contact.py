@@ -102,7 +102,7 @@ class TestQywxContact:
 
 
     @pytest.mark.parametrize('name',delcontacts)
-    def test_del_contact(self):
+    def test_del_contact(self,name):
         """
         1. 打开应用
         2. 点击通讯录

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2020/11/4 08:33
 # @Author  : 饭盆里
-# @File    : test.py
+# @File    : test_add_contact.py
 # @Software: PyCharm
 # @desc    :
 from myappium.qiyeweixin.framework.basepage.app import App
