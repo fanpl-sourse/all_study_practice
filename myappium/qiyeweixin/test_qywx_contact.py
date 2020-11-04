@@ -23,6 +23,9 @@ from appium.webdriver.common.mobileby import MobileBy
 with open('./data/addcontact.yaml') as f:
     addcontacts = yaml.safe_load(f)
 
+with open('./data/delcontact.yaml') as f:
+    delcontacts = yaml.safe_load(f)
+
 class TestQywxContact:
     def setup_class(self):
         desire_caps = {
@@ -98,6 +101,7 @@ class TestQywxContact:
         self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/h9e').click()
 
 
+    @pytest.mark.parametrize('name',delcontacts)
     def test_del_contact(self):
         """
         1. 打开应用
@@ -110,7 +114,9 @@ class TestQywxContact:
         8. 验证删除成功
         :return:
         """
-        name = 'fanfan11'
+
+        # name = 'fanfan11'
+
         # 点击通讯录
         self.driver.find_element(MobileBy.XPATH, '//*[@text="通讯录"]').click()
 
