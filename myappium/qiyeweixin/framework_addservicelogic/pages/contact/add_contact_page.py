@@ -58,11 +58,3 @@ class AddContactPage:
         self.driver.find_element(MobileBy.XPATH, '//*[@text="保存"]').click()
         return ManualAddContactPage(self.driver)
 
-    def assert_add_success(self):
-        """
-        断言新建联系人成功
-        :return:
-        """
-        # 断言 toast
-        toast_message = self.driver.find_element(MobileBy.XPATH, '//*[@class="android.widget.Toast"]').text
-        assert '添加成功' in toast_message

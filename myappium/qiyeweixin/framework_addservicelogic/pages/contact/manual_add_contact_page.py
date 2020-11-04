@@ -25,3 +25,12 @@ class ManualAddContactPage:
         # 点击手动输入添加
         self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/hgx').click()
         return AddContactPage(self.driver)
+
+    def assert_add_success(self):
+        """
+        断言新建联系人成功
+        :return:
+        """
+        # 断言 toast
+        toast_message = self.driver.find_element(MobileBy.XPATH, '//*[@class="android.widget.Toast"]').text
+        assert '添加成功' in toast_message

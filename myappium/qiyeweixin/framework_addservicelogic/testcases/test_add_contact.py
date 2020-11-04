@@ -13,7 +13,7 @@ class TestAddContact:
 
     def test_contact(self):
         self.APP.start().goto_contact().goto_manual_add_contact_page().goto_add_contact_page().\
-            send_name('fanpl2').\
+            send_name('fanpl3').\
             click_gender('女').\
-            send_mobilenum('18388888880').\
-            click_save()
+            send_mobilenum('18388888881').\
+            click_save().assert_add_success()
