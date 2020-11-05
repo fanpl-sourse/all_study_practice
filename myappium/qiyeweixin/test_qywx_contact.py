@@ -137,8 +137,12 @@ class TestQywxContact:
         self.driver.find_element(MobileBy.XPATH,'//*[@text="编辑成员"]').click()
 
         # 滚动查找到【删除成员】按钮，点击
-        self.driver.find_element_by_android_uiautomator('new UiScrollable(new UiSelector().scrollable(true).instance(0))'
-                                                        '.scrollIntoView(new UiSelector().text("删除成员").instance(0));').click()
+        text = '删除成员'
+        # self.driver.find_element(MobileBy.ANDROID_UIAUTOMATOR,f'new UiScrollable(new UiSelector().scrollable(true).instance(0))'
+        #                                                 f'.scrollIntoView(new UiSelector().text("{text}").instance(0));').click()
+        self.driver.find_element(MobileBy.ANDROID_UIAUTOMATOR,
+                                 f'new UiScrollable(new UiSelector().scrollable(true).instance(0))'
+                                 f'.scrollIntoView(new UiSelector().text("{text}").instance(0))').click()
 
         # 确认删除
         self.driver.find_element(MobileBy.ID,'com.tencent.wework:id/bci').click()
