@@ -48,7 +48,7 @@ class TestWXMicroWebView:
         self.driver.swipe(size['width'] * 0.5, size['height'] * 0.4, size['width'] * 0.5, size['height'] * 0.9)
         self.driver.find_element(By.CLASS_NAME, 'android.widget.EditText').click()
         self.driver.find_element(By.XPATH, "//*[@text='取消']")
-        self.driver.find_element(By.CLASS_NAME, "android.widget.EditText").send_keys("雪球")
+        self.driver.find_element(By.CLASS_NAME, "android.widget.EditText").send_keys("xueqiu")
         self.driver.find_element(By.CLASS_NAME, 'android.widget.Button')
         self.driver.find_element(By.CLASS_NAME, 'android.widget.Button').click()
         self.driver.find_element(By.XPATH, "//*[@text='自选']")

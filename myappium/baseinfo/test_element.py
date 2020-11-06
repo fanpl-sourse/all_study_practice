@@ -29,7 +29,7 @@ class TestXueqiuSearch():
 
     def test_attribute(self):
         """
-        1. 打开【雪球】首页
+        1. 打开【xueqiu】首页
         2. 定位首页搜索框
         3. 判断搜索框是否可用，并查看搜索框name属性值
         4. 打印搜索这个元素的坐标和宽高
@@ -51,7 +51,7 @@ class TestXueqiuSearch():
 
     def test_attr(self):
         """
-        1. 打开【雪球】首页
+        1. 打开【xueqiu】首页
         2. 定位首页搜索框
         3. 判断搜索框是否可用，并查看搜索框name属性值
         4. 打印搜索这个元素的坐标和宽高
