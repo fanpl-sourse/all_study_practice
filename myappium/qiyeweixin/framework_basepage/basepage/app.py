@@ -5,21 +5,20 @@
 # @Software: PyCharm
 # @desc    :
 from appium import webdriver
-from selenium.webdriver.remote.webdriver import WebDriver
-
 from myappium.qiyeweixin.framework_basepage.basepage.basepage import BasePage
 from myappium.qiyeweixin.framework_basepage.pages.main_page import MainPage
 
 class App(BasePage):
     """
-    APP相关动作
+    APP相关动作,比如启动app,关闭APP 停止APP，进入首页
     """
-    def start(self,driver:WebDriver=None):
+    def start(self):
         """
         启动APP
         :return:
         """
-        if  driver == None:
+        if  self.driver == None:
+            #第一次调用start()方法时，driver为None
             desire_caps = {
                 "platformName": "android",
                 "appPackage": "com.tencent.wework",
@@ -35,9 +34,11 @@ class App(BasePage):
             # 与server建立连接，初始化一个driver，创建session
             self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desire_caps)
         else:
-            self.driver = driver
+            #launch_app() 这个方法不需要传入任何参数， 会自动启动起来DesireCapa里面定义的activity
+            # start_activity(packagename, activityname) 可以启动其它的应用的页面
+            self.driver.launch_app()
 
-        self.driver.implicitly_wait(5)
+        self.driver.implicitly_wait(10)
 
         return self
 
