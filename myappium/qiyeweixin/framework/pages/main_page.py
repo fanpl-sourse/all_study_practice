@@ -5,6 +5,7 @@
 # @Software: PyCharm
 # @desc    :
 from myappium.qiyeweixin.framework.pages.contact.contact_list_page import ContactListPage
+from myappium.qiyeweixin.framework.pages.workspace.workspace_list_page import WorkspaceListPage
 
 
 class MainPage:
@@ -23,3 +24,4 @@ class MainPage:
         进入工作台
         :return:
         """
+        return WorkspaceListPage()

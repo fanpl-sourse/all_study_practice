@@ -29,7 +29,7 @@ class App(BasePage):
                 'skipServerInstallation': 'true',  # 跳过 uiautomator2 server的安装
                 'skipDeviceInitialization': 'true',  # 跳过设备初始化
                 'settings[waitForIdleTimeout]': 0,  # 等待Idle为0
-                # 'dontStopAppOnReset': 'true'  # 不关闭，重启APP
+                'dontStopAppOnReset': 'true'  # 不关闭，重启APP，首次启动后不再重启
             }
 
             # 与server建立连接，初始化一个driver，创建session
