@@ -8,6 +8,8 @@ from appium.webdriver.common.mobileby import MobileBy
 
 from myappium.qiyeweixin.framework_basepage.basepage.basepage import BasePage
 from myappium.qiyeweixin.framework_basepage.pages.contact.contact_list_page import ContactListPage
+from myappium.qiyeweixin.framework_basepage.pages.workspace.workspace_list_page import WorkspaceListPage
+
 
 class MainPage(BasePage):
     """
@@ -15,6 +17,7 @@ class MainPage(BasePage):
     """
 
     click_contact_element = (MobileBy.XPATH, '//*[@text="通讯录"]')
+    click_workspace_element = (MobileBy.XPATH, '//*[@text="工作台"]')
 
     def goto_contact(self):
         """
@@ -22,12 +25,14 @@ class MainPage(BasePage):
         :return:
         """
         # 点击通讯录
-
         self.find_and_click(self.click_contact_element)
         return ContactListPage(self.driver)
 
     def goto_workplatform(self):
         """
-        进入工作台
+        进入工作台页面
         :return:
         """
+        # 点击【工作台】
+        self.find_and_click(self.click_workspace_element)
+        return WorkspaceListPage(self.driver)

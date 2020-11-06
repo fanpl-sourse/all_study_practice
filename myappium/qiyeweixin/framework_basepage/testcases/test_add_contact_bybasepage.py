@@ -17,20 +17,21 @@ with open('../../data/delcontact.yaml') as f:
 
 class TestAddContact:
     def setup_class(self):
-        self.app_start = App().start()
+        self.app = App()
+        self.app_start = self.app.start()
 
     def teardown_class(self):
-        self.APP.stop()
+        self.app.stop()
 
     def teardown(self):
-        self.APP.back()
+        self.app.back()
 
     @pytest.mark.parametrize(('name,gender,mobilenum'),addcontacts)
     def test_add_contact(self,name,gender,mobilenum):
         """
         测试企业微信-通讯录-新增联系人
         """
-        self.app_start.goto_contact().goto_manual_add_contact_page().goto_add_contact_page().\
+        self.app.goto_main().goto_contact().goto_manual_add_contact_page().goto_add_contact_page().\
             send_name(name).\
             click_gender(gender).\
             send_mobilenum(mobilenum).\
@@ -45,7 +46,7 @@ class TestAddContact:
         :return:
         """
         #启动APP-进入联系人列表页-进入检索框页面
-        searchpage = self.app_start.goto_contact().goto_search_page()
+        searchpage = self.app.goto_main().goto_contact().goto_search_page()
         #获取搜索前的页面数据列表
         before_list = searchpage.send_search_key(name)
 

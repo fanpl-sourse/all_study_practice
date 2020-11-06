@@ -4,7 +4,7 @@
 # @File    : test_workspace_punch_outside.py
 # @Software: PyCharm
 # @desc    :
-from myappium.qiyeweixin.framework.basepage.app import App
+from myappium.qiyeweixin.framework_basepage.basepage.app import App
 
 
 class TestWorkspacePunchOutside:
@@ -13,10 +13,13 @@ class TestWorkspacePunchOutside:
     """
     def setup(self):
         """
-
         :return:
         """
-        self.App = App
+        self.app = App()
+        self.app_start = self.app.start()
+
+    def teardown(self):
+        self.app.stop()
 
 
     def test_outside_punch(self):
@@ -24,4 +27,5 @@ class TestWorkspacePunchOutside:
         测试外出打卡
         :return:
         """
-        self.App.start().goto_workplatform().goto_punch_page().switchto_outside_punch().outside_punch()
+        self.app.goto_main().goto_workplatform().goto_punch_page().\
+            switchto_outside_punch().outside_punch().assert_punch_success()

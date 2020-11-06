@@ -39,15 +39,16 @@ class App(BasePage):
 
         self.driver.implicitly_wait(5)
 
-        return MainPage(self.driver)
+        return self
 
     def restart(self):
         """
         重启APP
         :return:
         """
+        self.driver.close()
         self.driver.launch_app()
-        return MainPage()
+        return self
 
     def stop(self):
         """
@@ -55,3 +56,10 @@ class App(BasePage):
         :return:
         """
         self.driver.quit()
+
+    def goto_main(self):
+        """
+        进入主页面
+        :return:
+        """
+        return MainPage(self.driver)
