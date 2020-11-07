@@ -1,4 +1,5 @@
 goto_search_result_page:
-  by: ID
-  locator: 'com.xueqiu.android:id/search_input_text'
-  key:
+  -
+    by: ID
+    locator: 'com.xueqiu.android:id/search_input_text'
+    key:

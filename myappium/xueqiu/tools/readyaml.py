@@ -21,4 +21,8 @@ class Tools:
 
 if __name__ == '__main__':
     print(os.getcwd())
-    print(Tools().read_yaml('./xueqiu/page_steps/main_page_step.yaml'))
+    l = Tools().read_yaml('./xueqiu/page_steps/main_page_step.yaml')
+    if 'goto_black_then_goto_search' in l.keys():
+        steps = l['goto_black_then_goto_search']
+        for i in range(len(steps)):
+            print(steps[i])

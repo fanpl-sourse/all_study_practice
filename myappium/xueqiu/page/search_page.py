@@ -4,6 +4,8 @@
 # @File    : search_page.py
 # @Software: PyCharm
 # @desc    :
+from time import sleep
+
 from appium.webdriver.common.mobileby import MobileBy
 
 from myappium.xueqiu.page.basepage import BasePage
@@ -24,4 +26,5 @@ class SearchPage(BasePage):
         """
         # self.find(self.search_and_sendkey_element).send_keys(value)
         self.steps('../page_steps/search_page_steps.yaml','goto_search_result_page')
+        sleep(3)
         return SearchResultPage(self.driver)

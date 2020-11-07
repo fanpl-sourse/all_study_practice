@@ -1,0 +1,5 @@
+caps:
+  "platformName": "android"
+  "deviceName": "emulator-5554"
+  "noReset": 'true'
+  "unicodeKeyBord": 'true'
