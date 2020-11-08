@@ -4,19 +4,9 @@
 # @File    : test_search_stock.py
 # @Software: PyCharm
 # @desc    :
-import pytest
-import yaml
+from myappium.xueqiu.testcase.test_base import TestBase
 
-from myappium.xueqiu.page.app import App
-
-
-class TestSearchStock:
-    def setup(self):
-        self.app = App()
-        self.app.start()
-
-    # def teardown(self):
-    #     self.app
+class TestSearchStock(TestBase):
 
     def test_search_stock(self):
         """
