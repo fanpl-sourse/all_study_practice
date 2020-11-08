@@ -17,14 +17,28 @@ def wasper(fun):
     #返回一个函数名
     return he
 
+#装饰器传参
+def f(a):
+    def wasper(fun):
+        def he(*args,**kwargs):
+            print('hello')
+            fun()
+            print(a)
+            print('bye')
+        #返回一个函数名
+        return he
+    return wasper
+
 @wasper
 def fun():
     print('fun')
 
+@f('fanfanfan')
 def fun1():
     print('fun1')
 
 def test():
+    fun1()
     #太繁琐了
-    wasper(fun1)()
-    fun()
+    # wasper(fun1)()
+    # fun()
