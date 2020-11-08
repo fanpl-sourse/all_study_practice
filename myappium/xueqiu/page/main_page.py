@@ -11,6 +11,7 @@ from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.common.by import By
 
 from myappium.xueqiu.page.basepage import BasePage
+from myappium.xueqiu.page.market.market_page import MarketPage
 from myappium.xueqiu.page.search_page import SearchPage
 
 
@@ -42,3 +43,12 @@ class MainPage(BasePage):
         # self.find(self.search_element).click()
         self.steps('../page_steps/main_page_step.yaml', 'goto_black_then_goto_search')
         return SearchPage(self.driver)
+
+    def goto_market(self):
+        """
+        进入行情页面
+        :return:
+        """
+        self.steps('../page_steps/main_page_step.yaml','goto_market')
+        # self.find(By.XPATH,'//*[@text="行情"]').click()
+        return MarketPage(self.driver)

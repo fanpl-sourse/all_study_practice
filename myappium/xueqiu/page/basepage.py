@@ -42,6 +42,12 @@ class BasePage:
             #递归调用，关闭弹框后，继续查找要找的元素
             return self.find(by,locator)
 
+    def finds(self,by,locator=None):
+        if locator is None:
+            element = self.driver.find_elements(*by)
+        else:
+            element = self.driver.find_elements(by, locator)
+        return element
 
 
     def steps(self,steps_path,currentmethord):
@@ -61,8 +67,8 @@ class BasePage:
                     if 'action' in step.keys():
                         if step['action'] == 'click':
                             self.find(step['by'],step['locator']).click()
-                        elif step['action'] == 'key':
-                            self.find(step['by'],step['locator']).send_keys(step['key'])
+                        elif step['action'] == 'sendkey':
+                            self.find(step['by'],step['locator']).send_keys(step['value'])
 
                 if 'sleep' in step.keys():
                     sleep(step['sleep'])

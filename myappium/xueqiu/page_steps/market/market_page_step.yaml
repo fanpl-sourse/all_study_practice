@@ -1,0 +1,5 @@
+goto_search_stock:
+  -
+     by : xpath
+     locator : '//*[@class="android.widget.TextView" and @text="行情"]'
+     action : click
