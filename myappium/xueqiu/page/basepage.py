@@ -9,6 +9,7 @@ from time import sleep
 from appium.webdriver.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 
+from myappium.xueqiu.tools.handle_black import handle_black
 from myappium.xueqiu.tools.readyaml import Tools
 
 
@@ -17,30 +18,52 @@ class BasePage:
     基础页面类
     """
 
-    _blacklist = {(By.ID,'com.xueqiu.android:id/iv_close')}
+    # _blacklist = {(By.ID,'com.xueqiu.android:id/iv_close')}
+    _black_error_max_num = 3
+    _black_error_num =0
 
     def __init__(self, driver: WebDriver = None):
         self.driver = driver
 
-    def find(self,by,locator=None):
+    # def find(self,by,locator=None):
+    #     """
+    #     查找元素
+    #     :return:
+    #     """
+    #     try:
+    #         if locator is None:
+    #             element = self.driver.find_element(*by)
+    #         else:
+    #             element = self.driver.find_element(by,locator)
+    #
+    #         self._black_error_num = 0
+    #         return element
+    #
+    #     except Exception as e:
+    #         if self._black_error_num >self._black_error_max_num:
+    #             self._black_error_num = 0
+    #             return e
+    #         self._black_error_num += 1
+    #         for black in self._blacklist:
+    #             elements = self.driver.find_elements(*black)
+    #             if len(elements) >0:
+    #                 elements[0].click()
+    #                 #递归调用，关闭弹框后，继续查找要找的元素
+    #                 return self.find(by,locator)
+    #
+    #         raise ValueError('元素不在黑名单中')
+
+    @handle_black
+    def find(self, by, locator=None):
         """
         查找元素
         :return:
         """
-        try:
-            if locator is None:
-                element = self.driver.find_element(*by)
-            else:
-                element = self.driver.find_element(by,locator)
-            return element
-
-        except:
-            for black in self._blacklist:
-                elements = self.driver.find_elements(*black)
-                if len(elements) >0:
-                    elements[0].click()
-            #递归调用，关闭弹框后，继续查找要找的元素
-            return self.find(by,locator)
+        if locator is None:
+            element = self.driver.find_element(*by)
+        else:
+            element = self.driver.find_element(by,locator)
+        return element
 
     def finds(self,by,locator=None):
         if locator is None:
@@ -65,9 +88,10 @@ class BasePage:
                 step = steps[i]
                 if 'by' in step.keys() and 'locator' in step.keys():
                     if 'action' in step.keys():
-                        if step['action'] == 'click':
+                        action = step['action']
+                        if action == 'click':
                             self.find(step['by'],step['locator']).click()
-                        elif step['action'] == 'sendkey':
+                        elif action == 'sendkey':
                             self.find(step['by'],step['locator']).send_keys(step['value'])
 
                 if 'sleep' in step.keys():
