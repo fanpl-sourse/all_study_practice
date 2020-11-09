@@ -4,6 +4,7 @@
 # @File    : basepage.py
 # @Software: PyCharm
 # @desc    :
+import json
 from time import sleep
 
 from appium.webdriver.webdriver import WebDriver
@@ -21,6 +22,9 @@ class BasePage:
     # _blacklist = {(By.ID,'com.xueqiu.android:id/iv_close')}
     _black_error_max_num = 3
     _black_error_num =0
+
+    #用于变量替换
+    _params = {}
 
     def __init__(self, driver: WebDriver = None):
         self.driver = driver
@@ -72,7 +76,6 @@ class BasePage:
             element = self.driver.find_elements(by, locator)
         return element
 
-
     def steps(self,steps_path,currentmethord):
         """
         解析操作步骤
@@ -81,11 +84,20 @@ class BasePage:
         :return:
         """
         steps_list = Tools().read_yaml(steps_path)
+
         if currentmethord in steps_list.keys():
             #获取要测试方法的步骤列表
             steps = steps_list[currentmethord]
+
+            string_steps = json.dumps(steps)
+            for key, value in self._params.items():
+                string_steps = string_steps.replace('${' + key + '}', value)
+
+            steps = json.loads(string_steps)
+
             for i in range(len(steps)):
                 step = steps[i]
+
                 if 'by' in step.keys() and 'locator' in step.keys():
                     if 'action' in step.keys():
                         action = step['action']
@@ -93,6 +105,8 @@ class BasePage:
                             self.find(step['by'],step['locator']).click()
                         elif action == 'sendkey':
                             self.find(step['by'],step['locator']).send_keys(step['value'])
+                        elif action == 'len>0':
+                            return len(self.finds(step['by'],step['locator'])) >0
 
                 if 'sleep' in step.keys():
                     sleep(step['sleep'])

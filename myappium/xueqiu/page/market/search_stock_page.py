@@ -11,7 +11,7 @@ from myappium.xueqiu.page.market.search_result_list_page import SearchResultList
 
 
 class SearchStockPage(BasePage):
-    def search_stock(self):
+    def search_stock(self,stock_name,stock_num):
         """
         检索股票
         :return:
@@ -23,6 +23,8 @@ class SearchStockPage(BasePage):
         # #选择内容点击
         # self.find(By.XPATH,'//*[@text="09988"]').click()
 
+        self._params['stock_name'] = stock_name
+        self._params['stock_num'] = stock_num
         self.steps('../page_steps/market/search_stock_page_step.yaml','search_stock')
 
         return SearchResultListPage(self.driver)

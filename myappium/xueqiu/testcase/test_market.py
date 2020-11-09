@@ -12,5 +12,9 @@ class TestMarket:
         self.app = App().start()
 
     def test_search_stock(self):
-        self.app.goto_mainpage().goto_market().goto_search_stock().search_stock().\
-            add_mychoice().assert_add_mychoice_success()
+        """
+        通过行情，检索股票，并加关注
+        :return:
+        """
+        self.app.goto_mainpage().goto_market().goto_search_stock().search_stock('阿里巴巴','09988').\
+            add_mychoice('09988').assert_add_mychoice_success('09988')
