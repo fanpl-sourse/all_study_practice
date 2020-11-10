@@ -1,11 +1,11 @@
 add_mychoice:
   -
     by: xpath
-    locator: '//*[@text="09988"]/../../..//*[@text="加自选"]'
+    locator: '//*[@text="${stock_num}"]/../../..//*[@text="加自选"]'
     action: click
 
 assert_add_mychoice_success:
   -
     by: xpath
-    locator: '//*[@text="09988"]/../../..//*[@text="已添加"]'
+    locator: '//*[@text="${stock_num}"]/../../..//*[@text="已添加"]'
     action: len>0

@@ -19,7 +19,9 @@ class BasePage:
     基础页面类
     """
 
-    # _blacklist = {(By.ID,'com.xueqiu.android:id/iv_close')}
+    _blacklist = {(By.ID,'com.xueqiu.android:id/iv_close'),
+                  (By.ID,'com.xueqiu.android:id/ib_close')
+                 }
     _black_error_max_num = 3
     _black_error_num =0
 

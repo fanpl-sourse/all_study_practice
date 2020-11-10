@@ -14,15 +14,20 @@ class Tools:
     主要包含一些工具
     """
     def read_yaml(self,dir):
-        with open(dir) as f:
+        with open(dir,encoding='utf-8') as f:
            data = yaml.safe_load(f)
 
            return data
 
 if __name__ == '__main__':
     print(os.getcwd())
-    l = Tools().read_yaml('./xueqiu/page_steps/main_page_step.yaml')
-    if 'goto_black_then_goto_search' in l.keys():
-        steps = l['goto_black_then_goto_search']
-        for i in range(len(steps)):
-            print(steps[i])
+    # l = Tools().read_yaml('./xueqiu/page_steps/main_page_step.yaml')
+    # if 'goto_black_then_goto_search' in l.keys():
+    #     steps = l['goto_black_then_goto_search']
+    #     for i in range(len(steps)):
+    #         print(steps[i])
+
+    l = Tools().read_yaml('./xueqiu/data/market_data.yaml')
+    print(l)
+
+

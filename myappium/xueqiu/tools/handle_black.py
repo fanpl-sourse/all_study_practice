@@ -11,7 +11,9 @@ from selenium.webdriver.common.by import By
 
 
 def handle_black(func):
-    _blacklist = {(By.ID, 'com.xueqiu.android:id/iv_close')}
+    _blacklist = {(By.ID, 'com.xueqiu.android:id/iv_close'),
+                  (By.ID,'com.xueqiu.android:id/ib_close')
+                  }
     #支持传任何参数
     def warper(*args,**kwargs):
         #局部引用，方式循环调用  instance 变量是获取传入函数的第一个变量，self
