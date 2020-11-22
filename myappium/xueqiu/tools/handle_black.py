@@ -7,9 +7,12 @@
 
 #装饰器函数--处理黑名单
 # 入参是一个函数名，出参也是一个函数名
+import logging
+
+import allure
 from selenium.webdriver.common.by import By
 
-
+logging.basicConfig(level=logging.INFO)
 def handle_black(func):
     _blacklist = {(By.ID, 'com.xueqiu.android:id/iv_close'),
                   (By.ID,'com.xueqiu.android:id/ib_close')
@@ -20,6 +23,7 @@ def handle_black(func):
         from myappium.xueqiu.page.basepage import BasePage
         instance:BasePage = args[0]
         try:
+                logging.info('run' + func.__name__ + '\n args:' + repr(args[1:]) + '\n kwargs' + repr(kwargs))
                 #模拟被调用函数的动作，比如 查找元素
                 element = func(*args,**kwargs)
                 instance._black_error_num = 0
@@ -27,6 +31,14 @@ def handle_black(func):
                 return element
         except Exception as e:
             instance.driver.implicitly_wait(1)
+
+            #allure中添加截图
+            instance.screen_short('tmp.png')
+            with open('tmp.png','rb') as f:
+                content = f.read()
+            allure.attach(content,attachment_type=allure.attachment_type.PNG)
+            logging.info('元素定位异常，进行黑名单处理')
+
             if instance._black_error_num >instance._black_error_max_num:
                 instance._black_error_num = 0
                 return e

@@ -5,6 +5,7 @@
 # @Software: PyCharm
 # @desc    :
 import json
+import logging
 from time import sleep
 
 from appium.webdriver.webdriver import WebDriver
@@ -18,10 +19,12 @@ class BasePage:
     """
     基础页面类
     """
+    logging.basicConfig(level=logging.INFO)
 
-    _blacklist = {(By.ID,'com.xueqiu.android:id/iv_close'),
-                  (By.ID,'com.xueqiu.android:id/ib_close')
-                 }
+    #黑名单
+    # _blacklist = {(By.ID,'com.xueqiu.android:id/iv_close'),
+    #               (By.ID,'com.xueqiu.android:id/ib_close')
+    #              }
     _black_error_max_num = 3
     _black_error_num =0
 
@@ -65,6 +68,7 @@ class BasePage:
         查找元素
         :return:
         """
+        logging.info(f'查找元素：by:{by},locator: {locator}')
         if locator is None:
             element = self.driver.find_element(*by)
         else:
@@ -112,6 +116,14 @@ class BasePage:
 
                 if 'sleep' in step.keys():
                     sleep(step['sleep'])
+
+
+    def screen_short(self,filename):
+        """
+        截图,并保存为filename
+        :return:
+        """
+        self.driver.save_screenshot(filename)
 
 
 

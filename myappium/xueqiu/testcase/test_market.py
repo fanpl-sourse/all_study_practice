@@ -6,12 +6,13 @@
 # @desc    :
 import os
 
+import allure
 import pytest
 
 from myappium.xueqiu.page.app import App
 from myappium.xueqiu.tools.readyaml import Tools
 
-
+@allure.feature("行情模块")
 class TestMarket:
     def setup(self):
         self.app = App().start()
@@ -20,6 +21,8 @@ class TestMarket:
     #     ('阿里巴巴','09988'),
     #     ('京东','JD')
     # ])
+
+    @allure.story('行情-检索股票-加关注')
     @pytest.mark.parametrize(('stock_name,stock_num'),Tools().read_yaml('../data/market_data.yaml'))
     def test_search_stock(self,stock_name,stock_num):
         """
