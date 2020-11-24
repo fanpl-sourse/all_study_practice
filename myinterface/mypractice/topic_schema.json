@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "TestInfo",
+    "description": "some information about test",
+    "type": "object",
+    "properties": {
+        "topics": {
+            "description": "Name of the test",
+            "type": "array"
+        }
+    },
+    "required": [
+        "topics"
+    ]
+}

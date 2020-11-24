@@ -88,3 +88,10 @@ class TestDemo:
         print(r.text)
         assert r.status_code ==200
         assert r.json()['headers']['Name'] == "xix"
+
+from requests.auth import HTTPBasicAuth
+class Test_oauth():
+    def test_oauth(self):
+        r = requests.get('http://httpbin.testing-studio.com/basic-auth/test/123',
+                         auth = HTTPBasicAuth("test","123"))
+        print(r.text)
