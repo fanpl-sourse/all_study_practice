@@ -1,0 +1,31 @@
+add_contact:
+    "method": "post"
+    "url":  "https://qyapi.weixin.qq.com/cgi-bin/user/create?access_token=${token}"
+    "json":
+        "userid": "${userid}"
+        "name": "${name}"
+        "mobile": "${mobile}"
+        "department":
+            - "${department}"
+
+get_contact:
+    "method": "get"
+    "url": "https://qyapi.weixin.qq.com/cgi-bin/user/get"
+    "params":
+        "access_token": "${token}"
+        "userid": "${userid}"
+
+edit_contact:
+    "method": "post"
+    "url": "https://qyapi.weixin.qq.com/cgi-bin/user/update?access_token=${token}"
+    "json":
+       "userid": ${userid}
+       "name": ${name}
+       "mobile": ${mobile}
+
+del_contact:
+    "method": "get"
+    "url": "https://qyapi.weixin.qq.com/cgi-bin/user/delete"
+    "params":
+        "access_token": "${token}"
+        "userid": "${userid}"
